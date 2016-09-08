@@ -1,3 +1,16 @@
 <template name="trip">
-    <li>{{_id}}, &lt;{{lat}}, {{lng}}&gt; -- {{title}} {{date}} || {{start_time}} -> {{end_time}} <button class="edit">&#9998;</button><button class="delete">&#10060;</button></li>
+    <li class="show-details">{{_id}}, &lt;{{lat}}, {{lng}}&gt; -- {{title}} {{date}} || {{start_time}} -> {{end_time}}
+        <button class="edit">&#9998;</button>
+        <button class="delete">&#10060;</button>
+    </li>
+    <li class="edit-details">
+        <form>
+            <input type="text" name="title" placeholder="Event name" />
+            <input type="text" name="date" placeholder="Date" />
+            <input type="text" name="start_time" placeholder="Start time" />
+            <input type="text" name="end_time" placeholder="End time" />
+        </form>
+        <button class="save">&#128428;</button>
+        <button class="cancel">&#10060;</button>
+    </li>
 </template>
