@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+}
 #header {
     width: 100%;
     line-height: 80px;
@@ -13,9 +23,89 @@
 .map-container {
     width:100%;
     max-width: 100%;
-    height:500px;
+    min-height: 91.5%;
+    height: 90%;
 }
 
 .edit-details {
     display: none;
+}
+
+/* CSS below for the sliding panel */
+#drawer-toggle {
+  position: absolute;
+  opacity: 0;
+}
+#drawer-toggle-label {
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+    -webkit-text-size-adjust: none;    
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  left: 0px;
+  height: 100px;
+  width: 100px;
+  position: fixed;
+  background: rgba(255, 255, 255, .0);
+  z-index: 99;
+}
+/* adds our "hamburger" menu icon */
+
+#drawer-toggle-label:before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 40px;
+  background: #fff;
+  left: 26px;
+  top: 26px;
+  box-shadow: 0 12px 0 #fff, 0 24px 0 #fff;
+}
+/* drawer menu pane - note the 0px width */
+
+#drawer {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    /* adds animation for all transitions */
+
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+    -webkit-text-size-adjust: none;
+
+
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: -300px;
+  height: 100%;
+  width: 300px;
+  background: #5f5f5f;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  display: block;
+  padding: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* checked styles (menu open state) */
+
+#drawer-toggle:checked ~ #drawer-toggle-label {
+  left: 300px;
+}
+
+#drawer-toggle:checked ~ #drawer {
+  left: 0px;
 }

@@ -1,22 +1,20 @@
 <body>
-   <div id="header">
-    <span>Mr. Trip Maker 9000 v0.1a</span>
-  </div>
+    <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
+    <label for="drawer-toggle" id="drawer-toggle-label"></label>
+    <div id="drawer">
+        <ul>
+            {{#each trips}}
+                {{> trip}}
+            {{/each}}
+        </ul>
+    </div>
+    <div id="header"><span>Mr. Trip Maker 9000 v0.1a</span></div>
 
-  {{> map }}
-  
-  <div id="sidebar">
-    <ul>
-        {{#each trips}}
-            {{> trip}}
-        {{/each}}
-    </ul>
-  </div>
-   
+    {{> map }}
 </body>
 
 <template name="map">
-    <div class="map-container">
-        {{> googleMap name="map" options=mapOptions}}
-    </div>
+<div class="map-container">
+    {{> googleMap name="map" options=mapOptions}}
+</div>
 </template>

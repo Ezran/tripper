@@ -1,16 +1,26 @@
 <template name="trip">
-    <li class="show-details">{{_id}}, &lt;{{lat}}, {{lng}}&gt; -- {{title}} {{date}} || {{start_time}} -> {{end_time}}
-        <button class="edit">&#9998;</button>
-        <button class="delete">&#10060;</button>
+    <li class="show-details">{{title}} via {{travel_type}} from {{start_date}} {{start_time}} until {{end_date}} {{end_time}}
+        <button title="Click on map to create a route endpoint.  Click again to cancel" class="end_loc">&#128204;</button>
+        <button title="Edit this event's info'" class="edit">&#9998;</button>
+        <button title="Delete this event" class="delete">&#10060;</button>
     </li>
     <li class="edit-details">
         <form>
             <input type="text" name="title" placeholder="Event name" />
-            <input type="text" name="date" placeholder="Date" />
+            <select name="travel_type">
+                <option value="none"></option>
+                <option value="fly">Fly</option>
+                <option value="drive">Drive</option>
+                <option value="transit">Public Transit</option>
+                <option value="walk">Walk</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="text" name="start_date" placeholder="Start date" />
             <input type="text" name="start_time" placeholder="Start time" />
+            <input type="text" name="end_date" placeholder="End date" />
             <input type="text" name="end_time" placeholder="End time" />
         </form>
-        <button class="save">&#128428;</button>
-        <button class="cancel">&#10060;</button>
+        <button title="Save changes" class="save">&#128428;</button>
+        <button title="Cancel changes" class="cancel">&#10060;</button>
     </li>
 </template>
